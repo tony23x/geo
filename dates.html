@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+        <title>My Location</title>
+        <link href="https://www.freefavicon.com/freefavicons/icons/flat-location-logo-152-234349.png" rel="shortcut icon" sizes="196x196"/>
+        <link rel="stylesheet" href="styles/fonts.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    </head>
+<body style="background-color: #111">
+<div>
+<img src="https://i.ibb.co/CKwB13V/1602297066820.png" alt="dragon" width="45%" height="auto">
+<h1 class="font-effect-neon" style="display: inline-block;position: absolute;top: 35px;font-size:35px;float:center;">My Location</h1>
+</div>
+<div id='ubicacion'></div>
+
+<script type="text/javascript">
+   if (navigator.geolocation) {
+     navigator.geolocation.getCurrentPosition(mostrarUbicacion);
+     } else {alert("¡Error! Este navegador no soporta la Geolocalización.");}
+
+function mostrarUbicacion(position) {
+    var times = position.timestamp;
+    var latitud = position.coords.latitude;
+    var longitud = position.coords.longitude;
+    var altitud = position.coords.altitude;
+    var exactitud = position.coords.accuracy;
+    var div = document.getElementById("ubicacion");
+    div.innerHTML = "<font color='#a972cb'>Timestamp: <font color='#92c7eb'>" + times + "<font color='#a972cb'><br>Latitud: <font color='#92c7eb'>" + latitud + "<font color='#a972cb'><br>Longitud: <font color='#92c7eb'>" + longitud + "<font color='#a972cb'><br>Altura en metros: <font color='#92c7eb'>" + altitud + "<font color='#a972cb'><br>Exactitud: <font color='#92c7eb'>" + exactitud;}
+function refrescarUbicacion() {
+    navigator.geolocation.watchPosition(mostrarUbicacion);}
+
+</script>
+<div id="demo"></div>
+<div id="mapholder"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCw-Viepxab4m9pRRQyjm_yRq1uhOj9iPc&callback=initMap" async defer></script>
+<br>
+<button class="raise"onclick="cargarmap()">Cargar mapa</button>
+<script type="text/javascript">
+var x=document.getElementById("demo");
+function cargarmap(){
+navigator.geolocation.getCurrentPosition(showPosition,showError);
+function showPosition(position)
+  {
+  lat=position.coords.latitude;
+  lon=position.coords.longitude;
+  latlon=new google.maps.LatLng(lat, lon)
+  mapholder=document.getElementById('mapholder')
+  mapholder.style.height='250px';
+  mapholder.style.width='500px';
+  var myOptions={
+  center:latlon,zoom:10,
+  mapTypeId:google.maps.MapTypeId.ROADMAP,
+  mapTypeControl:false,
+  navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+  };
+  var map=new google.maps.Map(document.getElementById("mapholder"),myOptions);
+  var marker=new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
+  }
+function showError(error)
+  {
+  switch(error.code) 
+    {
+    case error.PERMISSION_DENIED:
+      x.innerHTML="<font color='#92c7eb'>Denegada la petición de Geolocalización en el navegador."
+      break;
+    case error.POSITION_UNAVAILABLE:
+      x.innerHTML="<font color='#92c7eb'>La información de la localización no esta disponible. Intenta encender tu ubicación y recargar la página"
+      break;
+    case error.TIMEOUT:
+      x.innerHTML="<font color='#92c7eb'>El tiempo de petición ha expirado."
+      break;
+    case error.UNKNOWN_ERROR:
+      x.innerHTML="<font color='#92c7eb'>Ha ocurrido un error desconocido."
+      break;
+    }
+  }}
+</script>    
+</body>
+</html>
