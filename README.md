@@ -9,6 +9,6 @@
 <h2 align="left"> Mobile </h2>
 <img src="https://i.ibb.co/CHpj20c/geo.jpg" alt="PREVIEW" align="center" width="350px" height="600px">
 
-<img src="" alt="PREVIEW" align="center">
+<img src="https://i.ibb.co/nb7s8jN/mobile.jpg" alt="PREVIEW" align="center">
 
 <hr></hr>
