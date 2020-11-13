@@ -1,4 +1,4 @@
-<h1 align="center"> <i> GEO V.1.0 </i> </h1>
+<h1 align="center"> <i> GEO V.2.0 </i> </h1>
 <p align="center">Página para obtener la ubicación de vuestra víctima mediante GPS usando ing. social </p><hr>
 
 ## Método
