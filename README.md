@@ -1,4 +1,7 @@
 <h1 align="center"> <i> GEO V.2.0 </i> </h1>
+<p align="center">
+<img src="https://i.ibb.co/k11CMcF/eye.png" alt="ICON" align="center" border="0" width="250px" height="auto">
+</p>
 <p align="center">Página para obtener la ubicación de vuestra víctima mediante GPS usando ing. social </p><hr>
 
 ## Método
