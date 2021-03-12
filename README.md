@@ -1,4 +1,7 @@
 <h1 align="center"> <i> GEO V.2.0 </i> </h1>
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/th3pr3d4t0r)
+
 <p align="center">
 <img src="https://i.ibb.co/k11CMcF/eye.png" alt="ICON" align="center" border="0" width="250px" height="auto">
 </p>
